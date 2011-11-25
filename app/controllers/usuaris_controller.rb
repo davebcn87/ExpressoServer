@@ -5,6 +5,15 @@ class UsuarisController < ApplicationController
     @usuari = Usuari.new
   end
 
+  def show
+    @usuari = Usuari.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @usuari }
+    end
+  end
+
   def create
     @usuari = Usuari.new(params[:usuari])
     if @usuari.save
