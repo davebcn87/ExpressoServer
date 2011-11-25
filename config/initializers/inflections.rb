@@ -17,5 +17,7 @@ ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'beguda', 'begudes'
   inflect.irregular 'extra', 'extres'
   inflect.irregular 'extraDisponible', 'extresDisponibles'
+  inflect.irregular 'sessio', 'sessions'
+
   # inflect.uncountable %w( fish sheep )
 end

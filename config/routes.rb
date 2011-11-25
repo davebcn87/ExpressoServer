@@ -1,4 +1,18 @@
 ExpressoServer::Application.routes.draw do
+  match 'usuari/edit' => 'usuaris#edit', :as => :edit_current_usuari
+
+
+  root :to => 'sessions#new'
+
+  match 'login' => 'sessions#new', :as => :login
+
+  match 'signup' => 'usuaris#new', :as => :signup
+
+  match 'logout' => 'sessions#destroy', :as => :logout
+
+
+  resources :sessions
+
   resources :extra_disponibles
 
   resources :topings

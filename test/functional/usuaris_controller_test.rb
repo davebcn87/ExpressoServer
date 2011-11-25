@@ -1,49 +1,51 @@
 require 'test_helper'
 
 class UsuarisControllerTest < ActionController::TestCase
-  setup do
-    @usuari = usuaris(:one)
-  end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:usuaris)
-  end
-
-  test "should get new" do
+  def test_new
     get :new
-    assert_response :success
+    assert_template 'new'
   end
 
-  test "should create usuari" do
-    assert_difference('Usuari.count') do
-      post :create, usuari: @usuari.attributes
-    end
-
-    assert_redirected_to usuari_path(assigns(:usuari))
+  def test_create_invalid
+    Usuari.any_instance.stubs(:valid?).returns(false)
+    post :create
+    assert_template 'new'
   end
 
-  test "should show usuari" do
-    get :show, id: @usuari.to_param
-    assert_response :success
+  def test_create_valid
+    Usuari.any_instance.stubs(:valid?).returns(true)
+    post :create
+    assert_redirected_to root_url
+    assert_equal assigns['usuari'].id, session['usuari_id']
   end
 
-  test "should get edit" do
-    get :edit, id: @usuari.to_param
-    assert_response :success
+  def test_edit_without_user
+    get :edit, :id => "ignored"
+    assert_redirected_to login_url
   end
 
-  test "should update usuari" do
-    put :update, id: @usuari.to_param, usuari: @usuari.attributes
-    assert_redirected_to usuari_path(assigns(:usuari))
+  def test_edit
+    @controller.stubs(:current_usuari).returns(Usuari.first)
+    get :edit, :id => "ignored"
+    assert_template 'edit'
   end
 
-  test "should destroy usuari" do
-    assert_difference('Usuari.count', -1) do
-      delete :destroy, id: @usuari.to_param
-    end
+  def test_update_without_user
+    put :update, :id => "ignored"
+    assert_redirected_to login_url
+  end
 
-    assert_redirected_to usuaris_path
+  def test_update_invalid
+    @controller.stubs(:current_usuari).returns(Usuari.first)
+    Usuari.any_instance.stubs(:valid?).returns(false)
+    put :update, :id => "ignored"
+    assert_template 'edit'
+  end
+
+  def test_update_valid
+    @controller.stubs(:current_usuari).returns(Usuari.first)
+    Usuari.any_instance.stubs(:valid?).returns(true)
+    put :update, :id => "ignored"
+    assert_redirected_to root_url
   end
 end
