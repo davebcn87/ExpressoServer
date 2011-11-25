@@ -1,33 +1,41 @@
 <%= form_for(@beguda) do |f| %>
-  <% if @beguda.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@beguda.errors.count, "error") %> prohibited this beguda from being saved:</h2>
+	<% if @beguda.errors.any? %>
+	  <div id="error_explanation">
+	    <h2><%= pluralize(@beguda.errors.count, "error") %> prohibited this beguda from being saved:</h2>
 
-      <ul>
-      <% @beguda.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+	    <ul>
+	    <% @beguda.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
 
-  <div class="field">
-    <%= f.label :nom %><br />
-    <%= f.text_field :nom %>
-  </div>
-  <div class="field">
-    <%= f.label :preuTall %><br />
-    <%= f.text_field :preuTall %>
-  </div>
-  <div class="field">
-    <%= f.label :preuGrande %><br />
-    <%= f.text_field :preuGrande %>
-  </div>
-  <div class="field">
-    <%= f.label :preuVenti %><br />
-    <%= f.text_field :preuVenti %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<div class="field">
+	  <%= f.label :nom %><br />
+	  <%= f.text_field :nom %>
+	</div>
+	<div class="field">
+	  <%= f.label :preuTall %><br />
+	  <%= f.text_field :preuTall %>
+	</div>
+	<div class="field">
+	  <%= f.label :preuGrande %><br />
+	  <%= f.text_field :preuGrande %>
+	</div>
+	<div class="field">
+	  <%= f.label :preuVenti %><br />
+	  <%= f.text_field :preuVenti %>
+	</div>
+
+	<% @extres.each do |extra| %>
+		<div>
+			<%= f.label extra.nom %>
+			<%= check_box_tag "extres[]", extra.id.to_s %>
+		</div>
+	<% end %>
+
+	<div class="actions">
+	  <%= f.submit %>
+	</div>
 <% end %>

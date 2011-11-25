@@ -1,4 +1,4 @@
 class ExtraDisponible < ActiveRecord::Base
-  has_many :begudes
-  has_many :extres
+  belongs_to :beguda
+  belongs_to :extra
 end

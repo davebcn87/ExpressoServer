@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111125104221) do
+ActiveRecord::Schema.define(:version => 20111125113543) do
 
   create_table "begudes", :force => true do |t|
     t.float    "preuTall"
@@ -45,6 +45,9 @@ ActiveRecord::Schema.define(:version => 20111125104221) do
     t.datetime "updated_at"
   end
 
+  add_index "extra_disponibles", ["beguda_id"], :name => "index_extra_disponibles_on_beguda_id"
+  add_index "extra_disponibles", ["extra_id"], :name => "index_extra_disponibles_on_extra_id"
+
   create_table "extres", :force => true do |t|
     t.string   "nom"
     t.float    "preu"
@@ -58,6 +61,9 @@ ActiveRecord::Schema.define(:version => 20111125104221) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "topings", ["comanda_id"], :name => "index_topings_on_comanda_id"
+  add_index "topings", ["extra_id"], :name => "index_topings_on_extra_id"
 
   create_table "usuaris", :force => true do |t|
     t.string   "nom"

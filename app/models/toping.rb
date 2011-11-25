@@ -1,4 +1,4 @@
 class Toping < ActiveRecord::Base
-  has_many :comandes
-  has_many :extres
+  belongs_to :comanda
+  belongs_to :extra
 end

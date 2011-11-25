@@ -1,4 +1,6 @@
 class BegudesController < ApplicationController
+  
+  
   # GET /begudes
   # GET /begudes.json
   def index
@@ -13,7 +15,10 @@ class BegudesController < ApplicationController
   # GET /begudes/1
   # GET /begudes/1.json
   def show
-    @beguda = Beguda.find(params[:id])
+    @beguda = Beguda.includes(:extres).find(params[:id])
+    @llistaExtres = [] 
+  	@beguda.extres.each {|extra| @llistaExtres << extra.nom}
+  	
 
     respond_to do |format|
       format.html # show.html.erb
@@ -35,6 +40,7 @@ class BegudesController < ApplicationController
   # GET /begudes/1/edit
   def edit
     @beguda = Beguda.find(params[:id])
+    @extres = Extra.find(:all)
   end
 
   # POST /begudes
@@ -57,6 +63,14 @@ class BegudesController < ApplicationController
   # PUT /begudes/1.json
   def update
     @beguda = Beguda.find(params[:id])
+    
+    extres = params[:extres]
+    extres.each do |extra|
+      
+      extraObj = Extra.find(extra)
+      @beguda.extres << extraObj
+      
+    end
 
     respond_to do |format|
       if @beguda.update_attributes(params[:beguda])
