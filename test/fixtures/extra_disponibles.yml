@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  beguda_id: 1
+  extra_id: 1
+
+two:
+  beguda_id: 1
+  extra_id: 1

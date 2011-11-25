@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  pass: MyString
+  lat: 1.5
+  lang: 1.5
+
+two:
+  pass: MyString
+  lat: 1.5
+  lang: 1.5

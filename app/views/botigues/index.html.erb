@@ -1,0 +1,27 @@
+<h1>Listing botigues</h1>
+
+<table>
+  <tr>
+    <th>Pass</th>
+    <th>Lat</th>
+    <th>Lang</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @botigues.each do |botiga| %>
+  <tr>
+    <td><%= botiga.pass %></td>
+    <td><%= botiga.lat %></td>
+    <td><%= botiga.lang %></td>
+    <td><%= link_to 'Show', botiga %></td>
+    <td><%= link_to 'Edit', edit_botiga_path(botiga) %></td>
+    <td><%= link_to 'Destroy', botiga, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Botiga', new_botiga_path %>

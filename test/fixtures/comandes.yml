@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  usuari_id: 1
+  beguda_id: MyString
+  feta: false
+
+two:
+  usuari_id: 1
+  beguda_id: MyString
+  feta: false

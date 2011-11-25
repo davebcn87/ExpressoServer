@@ -1,0 +1,2 @@
+module BegudesHelper
+end

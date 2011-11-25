@@ -1,0 +1,27 @@
+<h1>Listing comandes</h1>
+
+<table>
+  <tr>
+    <th>Usuari</th>
+    <th>Beguda</th>
+    <th>Feta</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @comandes.each do |comanda| %>
+  <tr>
+    <td><%= comanda.usuari_id %></td>
+    <td><%= comanda.beguda_id %></td>
+    <td><%= comanda.feta %></td>
+    <td><%= link_to 'Show', comanda %></td>
+    <td><%= link_to 'Edit', edit_comanda_path(comanda) %></td>
+    <td><%= link_to 'Destroy', comanda, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Comanda', new_comanda_path %>

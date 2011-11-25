@@ -1,0 +1,29 @@
+<h1>Listing begudes</h1>
+
+<table>
+  <tr>
+	<th>Nom</th>	
+    <th>Preutall</th>
+    <th>Preugrande</th>
+    <th>Preuventi</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @begudes.each do |beguda| %>
+  <tr>
+	<td><%= beguda.nom %></td>
+    <td><%= beguda.preuTall %></td>
+    <td><%= beguda.preuGrande %></td>
+    <td><%= beguda.preuVenti %></td>
+    <td><%= link_to 'Show', beguda %></td>
+    <td><%= link_to 'Edit', edit_beguda_path(beguda) %></td>
+    <td><%= link_to 'Destroy', beguda, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Beguda', new_beguda_path %>

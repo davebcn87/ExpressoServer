@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Usuari:</b>
+  <%= @comanda.usuari_id %>
+</p>
+
+<p>
+  <b>Beguda:</b>
+  <%= @comanda.beguda_id %>
+</p>
+
+<p>
+  <b>Feta:</b>
+  <%= @comanda.feta %>
+</p>
+
+
+<%= link_to 'Edit', edit_comanda_path(@comanda) %> |
+<%= link_to 'Back', comandes_path %>

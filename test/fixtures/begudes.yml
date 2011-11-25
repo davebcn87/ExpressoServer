@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  preuTall: 1.5
+  preuGrande: 1.5
+  preuVenti: 1.5
+
+two:
+  preuTall: 1.5
+  preuGrande: 1.5
+  preuVenti: 1.5

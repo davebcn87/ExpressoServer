@@ -1,0 +1,29 @@
+<%= form_for(@botiga) do |f| %>
+  <% if @botiga.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@botiga.errors.count, "error") %> prohibited this botiga from being saved:</h2>
+
+      <ul>
+      <% @botiga.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pass %><br />
+    <%= f.text_field :pass %>
+  </div>
+  <div class="field">
+    <%= f.label :lat %><br />
+    <%= f.text_field :lat %>
+  </div>
+  <div class="field">
+    <%= f.label :lang %><br />
+    <%= f.text_field :lang %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
