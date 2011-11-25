@@ -42,3 +42,5 @@ group :test do
 end
 
 gem "mocha", :group => :test
+
+gem "seed_dump", "~> 0.3.4"
