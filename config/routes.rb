@@ -1,4 +1,18 @@
 ExpressoServer::Application.routes.draw do
+  resources :extra_disponibles
+
+  resources :topings
+
+  resources :extres
+
+  resources :begudes
+
+  resources :comandes
+
+  resources :usuaris
+
+  resources :botigues
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
