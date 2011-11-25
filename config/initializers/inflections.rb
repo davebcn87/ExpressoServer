@@ -8,3 +8,14 @@
 #   inflect.irregular 'person', 'people'
 #   inflect.uncountable %w( fish sheep )
 # end
+
+ActiveSupport::Inflector.inflections do |inflect|
+  # inflect.plural /^(ox)$/i, '\1en'
+  # inflect.singular /^(ox)en/i, '\1'
+  inflect.irregular 'botiga', 'botigues'
+  inflect.irregular 'comanda', 'comandes'
+  inflect.irregular 'beguda', 'begudes'
+  inflect.irregular 'extra', 'extres'
+  inflect.irregular 'extraDisponible', 'extresDisponibles'
+  # inflect.uncountable %w( fish sheep )
+end
