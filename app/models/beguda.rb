@@ -4,9 +4,11 @@ class Beguda < ActiveRecord::Base
   
   def afegirExtres(llistaExtres)
     self.extres.clear
-    llistaExtres.each do |extra|
-      extraObj = Extra.find(extra)
-      self.extres << extraObj
+    if (llistaExtres != nil) 
+      llistaExtres.each do |extra|
+        extraObj = Extra.find(extra)
+        self.extres << extraObj
+      end
     end
   end
 end
