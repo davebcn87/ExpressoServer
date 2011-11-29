@@ -28,11 +28,17 @@
 	  <%= f.text_field :preuVenti %>
 	</div>
 
-	<% @extres.each do |extra| %>
-		<div>
-			<%= f.label extra.nom %>
-			<%= check_box_tag "extres[]", extra.id.to_s %>
-		</div>
+	<% 
+	if @extres
+		@extres.each do |extra| %>
+			<div>
+				<% checked = @llistaExtres && @llistaExtres.include?(extra.id) %>
+				<%= f.label extra.nom %>
+				<%= check_box_tag "extres[]", extra.id.to_s, checked %>
+			</div>
+	<% 	end
+ 	else %>
+		No extras available
 	<% end %>
 
 	<div class="actions">

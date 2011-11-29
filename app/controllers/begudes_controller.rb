@@ -16,10 +16,8 @@ class BegudesController < ApplicationController
   # GET /begudes/1.json
   def show
     @beguda = Beguda.includes(:extres).find(params[:id])
-    @llistaExtres = [] 
-  	@beguda.extres.each {|extra| @llistaExtres << extra.nom}
-  	
-
+    @llistaExtres = llistarNomExtres(@beguda)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @beguda }
@@ -30,6 +28,7 @@ class BegudesController < ApplicationController
   # GET /begudes/new.json
   def new
     @beguda = Beguda.new
+    @extres = Extra.find(:all)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,12 +40,15 @@ class BegudesController < ApplicationController
   def edit
     @beguda = Beguda.find(params[:id])
     @extres = Extra.find(:all)
+    
+    @llistaExtres = llistarExtres(@beguda)
   end
 
   # POST /begudes
   # POST /begudes.json
   def create
     @beguda = Beguda.new(params[:beguda])
+    @beguda.afegirExtres(params[:extres])
 
     respond_to do |format|
       if @beguda.save
@@ -63,14 +65,7 @@ class BegudesController < ApplicationController
   # PUT /begudes/1.json
   def update
     @beguda = Beguda.find(params[:id])
-    
-    extres = params[:extres]
-    extres.each do |extra|
-      
-      extraObj = Extra.find(extra)
-      @beguda.extres << extraObj
-      
-    end
+    @beguda.afegirExtres(params[:extres])
 
     respond_to do |format|
       if @beguda.update_attributes(params[:beguda])
@@ -94,4 +89,19 @@ class BegudesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  private
+  
+  def llistarExtres(beguda)
+    llistaExtres = [] 
+  	@beguda.extres.each {|extra| llistaExtres << extra.id}
+  	return llistaExtres
+  end
+    
+  def llistarNomExtres(beguda)
+    llistaExtres = [] 
+  	@beguda.extres.each {|extra| llistaExtres << extra.nom}
+  	return llistaExtres
+  end
+  
 end
