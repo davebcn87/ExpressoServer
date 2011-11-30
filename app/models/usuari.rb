@@ -1,6 +1,7 @@
 class Usuari < ActiveRecord::Base
   # new columns need to be added here to be writable through mass assignment
   has_many :comandes
+  has_one :remot
   attr_accessible :username, :email, :password, :password_confirmation, :saldo
 
   attr_accessor :password

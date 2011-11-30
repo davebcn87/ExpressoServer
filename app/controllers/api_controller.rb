@@ -4,14 +4,15 @@ class ApiController < ApplicationController
   def login
     usuari = Usuari.authenticate(params[:user], params[:pass])
     
+
     json=""
     if usuari
       result = 1
-      credits = usuari.credits
+      credits = usuari.saldo
       
       remot = usuari.create_remot
       
-      json = "{\"result\":#{result}, \"credits\":#{credits}, \"idSessio\":#{remot.hash}}"
+      json = "{\"result\":#{result}, \"credits\":#{credits}, \"idSessio\":\"#{remot.hash}\"}"
     else
       result = 0
       

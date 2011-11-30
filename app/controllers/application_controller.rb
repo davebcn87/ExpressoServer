@@ -5,5 +5,5 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery
   
-  app_halt = "$2a$10$dRwXuvlT8j6yPYBQYgNke."
+  App_halt = "$2a$10$dRwXuvlT8j6yPYBQYgNke."
 end
