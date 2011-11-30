@@ -2,7 +2,7 @@ class ApiController < ApplicationController
   skip_before_filter :login_required
   
   def login
-    usuari = Usuari.authenticate(params[:login], params[:password])
+    usuari = Usuari.authenticate(params[:user], params[:pass])
     
     json=""
     if usuari
