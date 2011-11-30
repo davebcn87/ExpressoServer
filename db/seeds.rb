@@ -15,7 +15,7 @@ Botiga.create([
 
 
 Comanda.create([
-  { :usuari_id => nil, :beguda_id => nil, :feta => nil, :created_at => nil, :updated_at => nil }
+  { :usuari_id => nil, :beguda_id => nil, :feta => nil, :created_at => "2011-11-30 11:07:27", :updated_at => "2011-11-30 11:07:27" }
 ])
 
 
@@ -39,13 +39,13 @@ ExtraDisponible.create([
 
 
 Toping.create([
-  { :comanda_id => nil, :extra_id => nil, :created_at => nil, :updated_at => nil }
+  { :comanda_id => nil, :extra_id => nil, :created_at => "2011-11-30 11:07:27", :updated_at => "2011-11-30 11:07:27" }
 ])
 
 
 
 Usuari.create([
-  { :username => "arol", :email => "arolet@gmail.com", :password_hash => "$2a$10$dRwXuvlT8j6yPYBQYgNke.u/gL1wK8Ib0PcwV6PgIhadXhGnlZBem", :password_salt => "$2a$10$dRwXuvlT8j6yPYBQYgNke.", :created_at => "2011-11-29 15:09:30", :updated_at => "2011-11-29 15:09:30", :saldo => 99.0 }
+  { :username => "David", :email => "david.cortes.18@gmail.com", :password_hash => "$2a$10$DcY8QSv5LTGV1V1eDUBOz.UXPsuDImA0ft2K7odIFvhOjeBxoNWMS", :password_salt => "$2a$10$DcY8QSv5LTGV1V1eDUBOz.", :created_at => "2011-11-30 11:09:43", :updated_at => "2011-11-30 11:09:43", :saldo => 20.0 }
 ])
 
 

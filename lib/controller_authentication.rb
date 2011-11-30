@@ -22,7 +22,7 @@ module ControllerAuthentication
   end
 
   def current_usuari
-    @current_usuari ||= Usuari.find(session[:usuari_id]) if session[:usuari_id]
+    @current_usuari ||= Usuari.find_by_id(session[:usuari_id]) if session[:usuari_id]
   end
 
   def logged_in?
