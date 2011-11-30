@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111125115458) do
+ActiveRecord::Schema.define(:version => 20111130103215) do
 
   create_table "begudes", :force => true do |t|
     t.float    "preuTall"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20111125115458) do
   end
 
   create_table "botigues", :force => true do |t|
-    t.string   "pass"
+    t.string   "nom"
     t.float    "lat"
     t.float    "lang"
     t.datetime "created_at"

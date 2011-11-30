@@ -2,13 +2,14 @@
 # Do not hesitate to tweak this to your needs
 
 Beguda.create([
-  { :preuTall => nil, :preuGrande => nil, :preuVenti => nil, :created_at => nil, :updated_at => nil, :nom => nil }
+  { :preuTall => 3.0, :preuGrande => 4.5, :preuVenti => 5.0, :created_at => "2011-11-29 15:16:16", :updated_at => "2011-11-29 15:16:16", :nom => "Cafe Mocca" },
+  { :preuTall => 2.2, :preuGrande => 3.4, :preuVenti => 5.0, :created_at => "2011-11-29 15:23:41", :updated_at => "2011-11-29 15:23:41", :nom => "Caramelo Macciato" }
 ])
 
 
 
 Botiga.create([
-  { :pass => nil, :lat => nil, :lang => nil, :created_at => nil, :updated_at => nil }
+  { :nom => "Starbucks Sagrada Familia", :lat => 41.40381101002872, :lang => 2.1758320927619934, :created_at => "2011-11-30 10:41:24", :updated_at => "2011-11-30 10:41:24" }
 ])
 
 
@@ -20,13 +21,19 @@ Comanda.create([
 
 
 Extra.create([
-  { :nom => nil, :preu => nil, :created_at => nil, :updated_at => nil }
+  { :nom => "Nata", :preu => 0.5, :created_at => "2011-11-29 15:12:51", :updated_at => "2011-11-29 15:12:51" },
+  { :nom => "Caramel", :preu => 0.5, :created_at => "2011-11-29 15:13:02", :updated_at => "2011-11-29 15:13:02" },
+  { :nom => "Extra shot", :preu => 0.5, :created_at => "2011-11-29 15:13:25", :updated_at => "2011-11-29 15:13:25" }
 ])
 
 
 
 ExtraDisponible.create([
-  { :beguda_id => nil, :extra_id => nil, :created_at => nil, :updated_at => nil }
+  { :beguda_id => 4, :extra_id => 3, :created_at => "2011-11-29 15:40:45", :updated_at => "2011-11-29 15:40:45" },
+  { :beguda_id => 4, :extra_id => 4, :created_at => "2011-11-29 15:40:45", :updated_at => "2011-11-29 15:40:45" },
+  { :beguda_id => 4, :extra_id => 5, :created_at => "2011-11-29 15:40:45", :updated_at => "2011-11-29 15:40:45" },
+  { :beguda_id => 3, :extra_id => 3, :created_at => "2011-11-29 15:40:59", :updated_at => "2011-11-29 15:40:59" },
+  { :beguda_id => 3, :extra_id => 5, :created_at => "2011-11-29 15:40:59", :updated_at => "2011-11-29 15:40:59" }
 ])
 
 
@@ -38,7 +45,7 @@ Toping.create([
 
 
 Usuari.create([
-  { :nom => nil, :pass => nil, :saldo => nil, :created_at => nil, :updated_at => nil }
+  { :username => "arol", :email => "arolet@gmail.com", :password_hash => "$2a$10$dRwXuvlT8j6yPYBQYgNke.u/gL1wK8Ib0PcwV6PgIhadXhGnlZBem", :password_salt => "$2a$10$dRwXuvlT8j6yPYBQYgNke.", :created_at => "2011-11-29 15:09:30", :updated_at => "2011-11-29 15:09:30", :saldo => 99.0 }
 ])
 
 

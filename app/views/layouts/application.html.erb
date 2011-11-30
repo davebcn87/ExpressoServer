@@ -12,16 +12,19 @@
 <header>	
 	<h1>Starbuck Expresso</h1>
 	<h2>Server</h2>
-	<nav>
-		<ul>
-			<li><%= link_to "Botigues", botigues_path %></li>
-			<li><%= link_to "Begudes", begudes_path %></li>
-			<li><%= link_to "Usuaris", usuaris_path %></li>
-			<li><%= link_to "Comandes", comandes_path %></li>
-			<li><%= link_to "Extres", extres_path %></li>
-			<div class="clear"></div>
-		</ul>
-	</nav>
+	
+	<% if current_usuari%>
+		<nav>
+			<ul>
+				<li><%= link_to "Botigues", botigues_path %></li>
+				<li><%= link_to "Begudes", begudes_path %></li>
+				<li><%= link_to "Comandes", comandes_path %></li>
+				<li><%= link_to "Extres", extres_path %></li>
+				<div class="clear"></div>
+			</ul>
+		</nav>
+	<% end %>
+	
 </header>
 
 <div id="container">

@@ -2,7 +2,7 @@ ExpressoServer::Application.routes.draw do
   match 'usuari/edit' => 'usuaris#edit', :as => :edit_current_usuari
 
 
-  root :to => 'sessions#new'
+  root :to => 'begudes#index'
 
   match 'login' => 'sessions#new', :as => :login
 

@@ -1,5 +1,6 @@
 class UsuarisController < ApplicationController
-  before_filter :login_required, :except => [:new, :create]
+  # before_filter :login_required, :except => [:new, :create]
+  skip_before_filter :login_required, :only => [:new, :create ]
 
   def new
     @usuari = Usuari.new
