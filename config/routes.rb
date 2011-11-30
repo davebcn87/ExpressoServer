@@ -26,6 +26,9 @@ ExpressoServer::Application.routes.draw do
   resources :usuaris
 
   resources :botigues
+  
+  match 'api/login' => 'api#login'
+  match 'api/carta' => 'api#carta'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
