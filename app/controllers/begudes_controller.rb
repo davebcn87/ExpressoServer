@@ -29,6 +29,7 @@ class BegudesController < ApplicationController
   def new
     @beguda = Beguda.new
     @extres = Extra.find(:all)
+    @categories = Categoria.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +41,8 @@ class BegudesController < ApplicationController
   def edit
     @beguda = Beguda.find(params[:id])
     @extres = Extra.find(:all)
-    
+    @categories = Categoria.all
+
     @llistaExtres = llistarExtres(@beguda)
   end
 
