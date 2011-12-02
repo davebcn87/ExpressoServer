@@ -23,7 +23,7 @@ class ApiController < ApplicationController
   end
   
   def carta
-    begudes = Beguda.includes(:extres).find(:all)
-    render json: begudes.to_json(include: :extres, except: [:created_at, :updated_at])
+    categories = Categoria.includes(:begudes).find(:all)
+    render json: categories.to_json(include: { begudes: { include: :extres }}, except: [:created_at, :updated_at])
   end
 end

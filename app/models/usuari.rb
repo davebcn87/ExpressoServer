@@ -17,7 +17,7 @@ class Usuari < ActiveRecord::Base
 
   # login can be either username or email address
   def self.authenticate(login, pass)
-    usuari = find_by_username(login) || find_by_email(login)
+    usuari = self.find(:first, :conditions => [ "lower(username) = ?",login.downcase ]) || find_by_email(login)
     return usuari if usuari && usuari.password_hash == usuari.encrypt_password(pass)
   end
 

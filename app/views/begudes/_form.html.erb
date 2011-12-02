@@ -28,6 +28,12 @@
 	  <%= f.text_field :preuVenti %>
 	</div>
 
+  <% if @categories %>
+    <div class="field">
+      <%= f.label :categoria %><br />
+      <%= f.collection_select :categoria_id, @categories, :id, :nom %>
+    </div>
+  <% end %>
 	<% 
 	if @extres
 		@extres.each do |extra| %>

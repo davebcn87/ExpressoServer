@@ -1,4 +1,6 @@
 ExpressoServer::Application.routes.draw do
+  resources :categories
+
   match 'usuari/edit' => 'usuaris#edit', :as => :edit_current_usuari
 
 
